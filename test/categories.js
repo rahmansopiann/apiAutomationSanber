@@ -40,6 +40,30 @@ describe('POST/Category', () => {
     })
 })
 
+describe('GET/Category', () => {
+    it('GET/Category page 1', async () => {
+        return request(baseurl)
+        .get('/customers?page=1')
+        .set( "Authorization", "Bearer " + token )
+        .then(async(response) => {
+            console.log(response.body)
+            expect((await response).status).to.equal(200)
+            expect((await response).body.status).to.equal("success")
+            expect((await response).body.data).to.be.an('object')
+        })
+    }),
+    it('GET/Category with invalid token', async () => {
+        return request(baseurl)
+        .get('/customers?page=1')
+        .set( "Authorization", "Bearer " + invalidToken )
+        .then(async(response) => {
+            expect((await response).status).to.equal(401)
+            expect((await response).body.error).to.equal("Unauthorized")
+            expect((await response).body.message).to.equal("Invalid token structure")
+        })
+    })
+})
+
 describe('GET/Category by id', () => {
     it('GET/Category with valid id', async () => {
         return request(baseurl)
@@ -102,7 +126,7 @@ describe('DELETE/Category', () => {
             expect((await response).body.data).to.be.an('object')
         })
     }),
-    it.only('DELETE/Category with invalid id', async () => {
+    it('DELETE/Category with invalid id', async () => {
         return request(baseurl)
         .get('/categories/cd866e23-dc7f-4b2d-be0f-345e6ba23b')
         .set( "Authorization", "Bearer " + token )
