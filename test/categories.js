@@ -12,7 +12,7 @@ const token = sup.token
 const invalidToken = sup.invalidToken
 const forGet = data.forGet
 const forPut = data.forPut
-const forDelete = data.forDelete[1]
+const forDelete = data.forDelete[2]
 
 
 describe('POST/Category', () => {
