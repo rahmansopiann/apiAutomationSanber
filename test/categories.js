@@ -46,7 +46,6 @@ describe('GET/Category', () => {
         .get('/customers?page=1')
         .set( "Authorization", "Bearer " + token )
         .then(async(response) => {
-            console.log(response.body)
             expect((await response).status).to.equal(200)
             expect((await response).body.status).to.equal("success")
             expect((await response).body.data).to.be.an('object')
