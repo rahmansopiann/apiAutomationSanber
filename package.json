@@ -1,0 +1,29 @@
+{
+  "name": "apiautomationsanber",
+  "version": "1.0.0",
+  "description": "test api automation sanber",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout100000 --reporter mochawesome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahmansopianqa/apiAutomationSanber.git"
+  },
+  "keywords": [
+    "api, automations"
+  ],
+  "author": "Rahman Sopian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahmansopianqa/apiAutomationSanber/issues"
+  },
+  "homepage": "https://github.com/rahmansopianqa/apiAutomationSanber#readme",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "jsonschema": "^1.4.1",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "supertest": "^6.3.3"
+  }
+}
